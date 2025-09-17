@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 
 interface TransportationProps {
@@ -114,7 +114,7 @@ export default function Transportation({
 
   return (
     <>
-      <div className="flex flex-col space-y-5 text-black">
+      <div className="flex flex-col space-y-5 text-black mt-10">
         <span className="text-2xl font-semibold">{getTitle()}</span>
         
         {/* Error Messages */}
@@ -325,7 +325,7 @@ export default function Transportation({
                 {(() => {
                   const distance = transportResponse.transportationData?.distanceTravelled_km || 0;
                   const fuelConsumption = transportResponse.transportationData?.fuelConsumption_perKm || 0;
-                  const totalFuel = distance * fuelConsumption;
+                  // const totalFuel = distance * fuelConsumption;
 
                   if (distance < 500 && fuelConsumption < 0.4) {
                     return (

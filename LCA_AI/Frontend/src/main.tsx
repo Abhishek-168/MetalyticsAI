@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { RecoilRoot } from 'recoil'
-import Navbar from './Components/Navbar.tsx'
+// import Navbar from './Components/Navbar.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

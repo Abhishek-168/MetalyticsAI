@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import  { Suspense } from 'react';
 import { useRecoilValue } from 'recoil';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Project_meta } from './atoms/project';
@@ -218,7 +218,7 @@ const NavbarContent = () => {
             </div>
             <div className="flex items-center space-x-4">
               <button 
-                onClick={() => navigate('/dashboard')}
+                onClick={() => navigate('/')}
                 className="text-blue-600 hover:text-blue-800 text-sm"
               >
                 Dashboard

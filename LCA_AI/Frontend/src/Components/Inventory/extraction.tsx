@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 
 interface ExtractionProps {
@@ -135,7 +135,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
                 placeholder="e.g., Aluminum, Copper, Steel"
                 value={extractionMetal}
                 onChange={(e) => setExtractionMetal(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
@@ -148,7 +148,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
                 placeholder="e.g., High-grade, Commercial grade"
                 value={materialGrade}
                 onChange={(e) => setMaterialGrade(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
@@ -159,7 +159,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
               <select
                 value={sourceType}
                 onChange={(e) => setSourceType(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="" disabled>Select Source Type</option>
                 <option value="mines">Mines</option>
@@ -176,7 +176,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
               <select
                 value={region}
                 onChange={(e) => setRegion(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="" disabled>Select Region</option>
                 <option value="australia">Australia</option>
@@ -197,7 +197,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
               <select
                 value={method}
                 onChange={(e) => setMethod(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="" disabled>Select Extraction Method</option>
                 <option value="Open-pit Mining">Open-pit Mining</option>
@@ -215,7 +215,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
               <select
                 value={energySource}
                 onChange={(e) => setEnergySource(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="" disabled>Select Energy Source</option>
                 <option value="Electricity">Electricity</option>
@@ -236,7 +236,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
                 placeholder="1200"
                 value={totalEnergyConsumption}
                 onChange={(e) => setTotalEnergyConsumption(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
@@ -249,7 +249,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
                 placeholder="5000"
                 value={waterUsage}
                 onChange={(e) => setWaterUsage(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
@@ -262,7 +262,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
                 placeholder="300"
                 value={wasteGenerated}
                 onChange={(e) => setWasteGenerated(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
@@ -275,7 +275,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
                 placeholder="50"
                 value={costOfExtraction}
                 onChange={(e) => setCostOfExtraction(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
           </div>

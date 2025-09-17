@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import  { Suspense } from 'react';
 import { useParams } from "react-router-dom";
 import { Project_meta } from "../Components/atoms/project";
 import { useRecoilValue } from "recoil";
@@ -25,7 +25,7 @@ const LoadingSpinner = () => (
 );
 
 // Error boundary component
-const ErrorFallback = ({ error, projectId }: { error: any, projectId: string }) => (
+const ErrorFallback = ({ projectId }: { error: any, projectId: string }) => (
   <div className="flex items-center justify-center min-h-screen">
     <div className="text-center bg-red-50 border border-red-200 rounded-lg p-8">
       <h1 className="text-2xl font-bold text-red-600 mb-4">Error Loading Project</h1>

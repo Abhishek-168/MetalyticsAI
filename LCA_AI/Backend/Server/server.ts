@@ -301,6 +301,6 @@ app.use("/api/inventory", INVENTORY);
 app.use("/api/results", RESULTS);
 
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Server is running on port 5000');
 });

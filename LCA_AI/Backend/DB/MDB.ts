@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // MongoDB connection
-const MDB_URI = "mongodb://localhost:27017/Matalstics";
+const MDB_URI = process.env.MONGO_URL || "mongodb+srv://misterfreefire33:PJPAfmmjuprxvGhZ@cluster0.xpbj1af.mongodb.net/Metalystics?retryWrites=true&w=majority";
 
 // Connect to MongoDB
 export const connectDB = async () => {

@@ -1,7 +1,7 @@
 import {Routes, Route } from 'react-router-dom'
 import './App.css'
 import Pinit from './pages/Pinit'
-import Navbar from './Components/Navbar'
+// import Navbar from './Components/Navbar'
 import Landing from './pages/Landing'
 import InputPage from './pages/Input'
 import EnvImpact from './pages/EnvImpact'
