@@ -2,7 +2,6 @@ import express from 'express';
 //import LOGS from './Midware/logs';
 import INVENTORY from './Routes/Inventory';
 import RESULTS from './Routes/Results';
-import cors from 'cors';
 import {LCAProject} from '../DB/schemas/project';
 import { connectDB } from '../DB/MDB';
 import cors from 'cors';
