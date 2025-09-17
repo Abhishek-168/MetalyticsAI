@@ -71,7 +71,7 @@ export default function Transportation({
       };
 
       const response = await axios.post(
-        `https://metalyticsai-2.onrender.com//api/inventory/transportation/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com/api/inventory/transportation/${currentProjectId}`,
         transportPayload
       );
 

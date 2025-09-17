@@ -56,7 +56,7 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
       };
 
       const response = await axios.post(
-        `https://metalyticsai-2.onrender.com//api/inventory/extraction/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com/api/inventory/extraction/${currentProjectId}`,
         extractionPayload
       );
 

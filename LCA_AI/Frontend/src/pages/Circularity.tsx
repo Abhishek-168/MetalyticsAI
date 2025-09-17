@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-const Base_URL = "https://metalyticsai-2.onrender.com/"
+const Base_URL = "https://metalyticsai-2.onrender.com"
 import { useParams } from "react-router-dom";
 import Strategies from "../Components/stratigies";
 import Matrics from "../Components/matrics";

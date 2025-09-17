@@ -5,6 +5,7 @@ import RESULTS from './Routes/Results';
 import cors from 'cors';
 import {LCAProject} from '../DB/schemas/project';
 import { connectDB } from '../DB/MDB';
+import cors from 'cors';
 // Import all process models
 import { 
   Extraction, 
@@ -24,6 +25,13 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '10mb' })); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true, limit: '10mb' })); // Parse URL-encoded bodies
+
+
+app.use(cors({
+  origin: 'https://metalyticsai-fe.onrender.com', // your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // if you use cookies/auth
+}));
 
 // Connect to MongoDB
 connectDB();

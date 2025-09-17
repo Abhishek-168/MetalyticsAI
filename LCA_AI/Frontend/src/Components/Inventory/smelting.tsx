@@ -58,7 +58,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
       };
 
       const response = await axios.post(
-        `https://metalyticsai-2.onrender.com//api/inventory/smelting/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com/api/inventory/smelting/${currentProjectId}`,
         smeltingPayload
       );
 

@@ -1,6 +1,6 @@
 import { selectorFamily } from 'recoil';
 // import type Casting from '../Inventory/casting';
-const BASE_URL =  'https://metalyticsai-2.onrender.com/';
+const BASE_URL =  'https://metalyticsai-2.onrender.com';
 
 const defaMD = {
         project_id: "1234",

@@ -65,7 +65,7 @@ export default function Refining({ projectId, onSuccess, onError }: RefiningProp
       };
 
       const response = await axios.post(
-        `https://metalyticsai-2.onrender.com//api/inventory/refining/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com/api/inventory/refining/${currentProjectId}`,
         refiningPayload
       );
 
