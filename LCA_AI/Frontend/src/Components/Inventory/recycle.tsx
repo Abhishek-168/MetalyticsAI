@@ -86,7 +86,7 @@ export default function Recycling({ projectId, onSuccess, onError }: RecyclingPr
       };
 
       const response = await axios.post(
-        `http://localhost:5000/api/inventory/recycling/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com//api/inventory/recycling/${currentProjectId}`,
         recyclingPayload
       );
 

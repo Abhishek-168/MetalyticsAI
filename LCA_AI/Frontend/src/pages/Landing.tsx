@@ -25,7 +25,7 @@ export default function Landing() {
 
     const fetchProjects = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/project/all');
+            const response = await axios.get('https://metalyticsai-2.onrender.com//api/project/all');
             setProjects(response.data.projects);
         } catch (error) {
             console.error('Error fetching projects:', error);

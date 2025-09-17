@@ -51,7 +51,7 @@ export default function EndOfLife({ projectId, onSuccess, onError }: EndOfLifePr
       };
 
       const response = await axios.post(
-        `http://localhost:5000/api/inventory/endoflife/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com//api/inventory/endoflife/${currentProjectId}`,
         endOfLifePayload
       );
 

@@ -68,7 +68,7 @@ export default function Casting({ projectId, onSuccess, onError }: CastingProps)
       };
 
       const response = await axios.post(
-        `http://localhost:5000/api/inventory/casting/${currentProjectId}`,
+        `https://metalyticsai-2.onrender.com//api/inventory/casting/${currentProjectId}`,
         castingPayload
       );
 

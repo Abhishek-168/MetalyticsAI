@@ -7,7 +7,7 @@ import Core from '../Components/core'
 import Polution from '../Components/Polution'
 import StageWise from '../Components/StageWise';
 import Resource from '../Components/resourse';
-const Base_URL = "http://localhost:5000"
+const Base_URL = "https://metalyticsai-2.onrender.com/"
 
 export default function EnvImpact() {
   const { id: projectid }  = useParams();

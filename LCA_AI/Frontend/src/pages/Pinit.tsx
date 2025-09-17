@@ -29,7 +29,7 @@ export default function Pinit() {
     setSuccess("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/project/init", {
+      const response = await axios.post("https://metalyticsai-2.onrender.com//api/project/init", {
         projectName,
         metalType,
         goal,
