@@ -13,6 +13,7 @@ router.get('/envimpact/:projectId', async (req, res) => {
     if (!projectId) {
       return res.status(400).json({ error: "Project ID is required" });
     }
+  
 
     const project = await LCAProject.findById(projectId);
     if (!project) {

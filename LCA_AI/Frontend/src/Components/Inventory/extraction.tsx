@@ -96,6 +96,9 @@ export default function Extraction({ projectId, onSuccess, onError }: Extraction
   const handleModalClose = () => {
     setShowExtractionModal(false);
     setExtractionResponse(null);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000)
   };
 
   return (

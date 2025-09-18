@@ -4,28 +4,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Project_meta } from './atoms/project';
 
 // Navbar content component
-const NavbarContent = () => {
+const SidebarContent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  
-  if (!id) {
-    return (
-      <nav className="bg-[#f8fff0] text-black p-4 border-b border-red-700 w-full pl-[3em] pr-[3em]">
-        <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold">LCA AI</h1>
-          <button 
-            onClick={() => navigate('/')}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            Home
-          </button>
-        </div>
-      </nav>
-    );
-  }
 
-  const metadata = useRecoilValue(Project_meta(id));
+  const metadata = useRecoilValue(Project_meta(id || ''));
   console.log("Project Metadata:", metadata);
 
   if (!metadata || metadata.project_name === "Unknown Project") {
@@ -76,8 +60,8 @@ const NavbarContent = () => {
   return (
     <div className="flex">
       {/* Left Sidebar - Fixed positioning with proper scrolling */}
-      <div className="w-72 bg-gray-50 border-r border-gray-200 fixed top-0 left-0 h-screen overflow-y-auto z-10">
-        <div className="p-4 space-y-6">
+      <div className=" w-[25em] bg-gray-50 border-r border-gray-200 fixed top-[5em] left-0 h-screen overflow-y-scroll z-10 pt-[5px] ">
+        <div className="p-4 space-y-6 mb-[2em]">
           {/* Project Details Section */}
           <div>
             <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
@@ -175,7 +159,7 @@ const NavbarContent = () => {
           </div>
 
           {/* Progress Overview */}
-          <div className="bg-white rounded-lg border border-gray-200 p-4">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 ">
             <h3 className="text-sm font-semibold text-gray-900 mb-2">Progress Overview</h3>
             <div className="space-y-2">
               {(() => {
@@ -209,8 +193,8 @@ const NavbarContent = () => {
       </div>
 
       {/* Top Navbar */}
-      <div className="flex-1 ml-72">
-        <nav className="bg-[#f8f0f0] text-black p-4 border-b border-red-700 w-full fixed top-0 right-0 z-20" style={{ width: 'calc(100% - 288px)' }}>
+      <div className="flex-1">
+        <nav className="bg-[#f8f0f0] text-black p-5 border-b border-red-700 w-full fixed top-0 right-0 z-20" >
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
               <h1 className="text-xl font-bold">LCA AI - {metadata.project_name}</h1>
@@ -244,7 +228,7 @@ export default function Navbar() {
         <div className="animate-pulse">Loading navigation...</div>
       </div>
     }>
-      <NavbarContent />
+      <SidebarContent />
     </Suspense>
   );
 }

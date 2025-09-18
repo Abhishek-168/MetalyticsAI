@@ -128,7 +128,7 @@ export default function Transportation({
           <select
             value={mode}
             onChange={(e) => setMode(e.target.value)}
-            className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="" disabled>Select Mode of Transport *</option>
             <option value="truck">Truck</option>
@@ -148,7 +148,8 @@ export default function Transportation({
             placeholder="Distance travelled (km)"
             value={distanceTravelled_km}
             onChange={(e) => setDistanceTravelled_km(e.target.value)}
-            className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                            className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
           />
           <span className="text-red-500 text-lg absolute -top-1 -right-2">*</span>
         </div>
@@ -157,7 +158,8 @@ export default function Transportation({
           <select
             value={fuelType}
             onChange={(e) => setFuelType(e.target.value)}
-            className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                            className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
           >
             <option value="" disabled>Select Fuel Type *</option>
             <option value="diesel">Diesel</option>
@@ -177,7 +179,8 @@ export default function Transportation({
           placeholder="Fuel Consumption per km (L/km)"
           value={fuelConsumption_perKm}
           onChange={(e) => setFuelConsumption_perKm(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
         />
 
         <input
@@ -185,7 +188,8 @@ export default function Transportation({
           placeholder="Load Capacity Utilization (percent)"
           value={loadCapacityUtilization_percent}
           onChange={(e) => setLoadCapacityUtilization_percent(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
         />
 
         <input
@@ -193,13 +197,15 @@ export default function Transportation({
           placeholder="Average Vehicle Load (tons)"
           value={averageVehicleLoad_tons}
           onChange={(e) => setAverageVehicleLoad_tons(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
         />
 
         <select
           value={packagingType}
           onChange={(e) => setPackagingType(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
         >
           <option value="" disabled>Select Packaging Type</option>
           <option value="bulk">Bulk</option>
@@ -215,7 +221,8 @@ export default function Transportation({
           placeholder="Material Loss During Transport (percent)"
           value={materialLossDuringTransport_percent}
           onChange={(e) => setMaterialLossDuringTransport_percent(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
         />
 
         <input
@@ -223,7 +230,8 @@ export default function Transportation({
           placeholder="Cost of Transport per Trip (USD)"
           value={costOfTransport_perTrip_USD}
           onChange={(e) => setCostOfTransport_perTrip_USD(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+                          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+
         />
 
         {/* Submit Transport Data Button */}

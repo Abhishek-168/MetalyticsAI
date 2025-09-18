@@ -1,4 +1,4 @@
-import Chatbot from "./chatbot";
+// import Chatbot from "./chatbot";
 
 export default function Core(params: any) {
     const core = params.data || params;
@@ -210,7 +210,7 @@ export default function Core(params: any) {
             </div>
             </div>
             
-            <Chatbot />
+            
           </div>
             {/* Action Items */}
             {core.actionsToTake && core.actionsToTake.length > 0 && (

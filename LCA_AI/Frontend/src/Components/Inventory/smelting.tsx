@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
 
 interface SmeltingProps {
   projectId?: string;
@@ -7,19 +7,27 @@ interface SmeltingProps {
   onError?: (error: string) => void;
 }
 
-export default function Smelting({ projectId, onSuccess, onError }: SmeltingProps) {
+export default function Smelting({
+  projectId,
+  onSuccess,
+  onError,
+}: SmeltingProps) {
   // State variables for smelting form
   const [smeltingTech, setSmeltingTech] = useState("");
-  const [materialInput_tons_perBatch, setMaterialInput_tons_perBatch] = useState("");
+  const [materialInput_tons_perBatch, setMaterialInput_tons_perBatch] =
+    useState("");
   const [operatingTemp_C, setOperatingTemp_C] = useState("");
-  const [energyConsumption_kWh_perTon, setEnergyConsumption_kWh_perTon] = useState("");
+  const [energyConsumption_kWh_perTon, setEnergyConsumption_kWh_perTon] =
+    useState("");
   const [energySource, setEnergySource] = useState("");
   const [fluxMaterials_kg_perTon, setFluxMaterials_kg_perTon] = useState("");
   const [slagGenerated_kg_perTon, setSlagGenerated_kg_perTon] = useState("");
   const [outputEfficiency_percent, setOutputEfficiency_percent] = useState("");
-  const [recycledScrapInput_tons_perTon, setRecycledScrapInput_tons_perTon] = useState("");
+  const [recycledScrapInput_tons_perTon, setRecycledScrapInput_tons_perTon] =
+    useState("");
   const [recyclingQuality, setRecyclingQuality] = useState("");
-  const [waterConsumption_L_perTon, setWaterConsumption_L_perTon] = useState("");
+  const [waterConsumption_L_perTon, setWaterConsumption_L_perTon] =
+    useState("");
   const [operatingCost_USD_perTon, setOperatingCost_USD_perTon] = useState("");
 
   // Loading and response states
@@ -31,7 +39,8 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
   const submitSmeltingData = async () => {
     // Validation for required fields
     if (!smeltingTech || !materialInput_tons_perBatch || !operatingTemp_C) {
-      const errorMsg = "Please fill in all required fields: Smelting Technology, Material Input, and Operating Temperature";
+      const errorMsg =
+        "Please fill in all required fields: Smelting Technology, Material Input, and Operating Temperature";
       setError(errorMsg);
       if (onError) onError(errorMsg);
       return;
@@ -46,15 +55,29 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
         smeltingTech,
         materialInput_tons_perBatch: Number(materialInput_tons_perBatch),
         operatingTemp_C: Number(operatingTemp_C),
-        energyConsumption_kWh_perTon: energyConsumption_kWh_perTon ? Number(energyConsumption_kWh_perTon) : undefined,
+        energyConsumption_kWh_perTon: energyConsumption_kWh_perTon
+          ? Number(energyConsumption_kWh_perTon)
+          : undefined,
         energySource: energySource || undefined,
-        fluxMaterials_kg_perTon: fluxMaterials_kg_perTon ? Number(fluxMaterials_kg_perTon) : undefined,
-        slagGenerated_kg_perTon: slagGenerated_kg_perTon ? Number(slagGenerated_kg_perTon) : undefined,
-        outputEfficiency_percent: outputEfficiency_percent ? Number(outputEfficiency_percent) : undefined,
-        recycledScrapInput_tons_perTon: recycledScrapInput_tons_perTon ? Number(recycledScrapInput_tons_perTon) : undefined,
+        fluxMaterials_kg_perTon: fluxMaterials_kg_perTon
+          ? Number(fluxMaterials_kg_perTon)
+          : undefined,
+        slagGenerated_kg_perTon: slagGenerated_kg_perTon
+          ? Number(slagGenerated_kg_perTon)
+          : undefined,
+        outputEfficiency_percent: outputEfficiency_percent
+          ? Number(outputEfficiency_percent)
+          : undefined,
+        recycledScrapInput_tons_perTon: recycledScrapInput_tons_perTon
+          ? Number(recycledScrapInput_tons_perTon)
+          : undefined,
         recyclingQuality: recyclingQuality || undefined,
-        waterConsumption_L_perTon: waterConsumption_L_perTon ? Number(waterConsumption_L_perTon) : undefined,
-        operatingCost_USD_perTon: operatingCost_USD_perTon ? Number(operatingCost_USD_perTon) : undefined,
+        waterConsumption_L_perTon: waterConsumption_L_perTon
+          ? Number(waterConsumption_L_perTon)
+          : undefined,
+        operatingCost_USD_perTon: operatingCost_USD_perTon
+          ? Number(operatingCost_USD_perTon)
+          : undefined,
       };
 
       const response = await axios.post(
@@ -65,15 +88,15 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
       console.log("Smelting data submitted successfully:", response.data);
       setSmeltingResponse(response.data);
       setShowSmeltingModal(true);
-      
+
       // Clear form after successful submission
       resetForm();
-      
+
       if (onSuccess) onSuccess();
-      
     } catch (error: any) {
       console.error("Error submitting smelting data:", error);
-      const errorMsg = error.response?.data?.message || "Failed to submit smelting data";
+      const errorMsg =
+        error.response?.data?.message || "Failed to submit smelting data";
       setError(errorMsg);
       if (onError) onError(errorMsg);
     } finally {
@@ -106,7 +129,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
     <>
       <div className="flex flex-col space-y-5 text-black">
         <span className="text-2xl font-semibold">Smelting</span>
-        
+
         {/* Error Messages */}
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
@@ -118,19 +141,25 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           <select
             value={smeltingTech}
             onChange={(e) => setSmeltingTech(e.target.value)}
-            className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+            className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
-            <option value="" disabled>Select Smelting Technology *</option>
+            <option value="" disabled>
+              Select Smelting Technology *
+            </option>
             <option value="blast_furnace">Blast Furnace</option>
             <option value="electric_arc_furnace">Electric Arc Furnace</option>
             <option value="induction_furnace">Induction Furnace</option>
             <option value="reverberatory_furnace">Reverberatory Furnace</option>
             <option value="flash_smelting">Flash Smelting</option>
-            <option value="top_submerged_lance">Top Submerged Lance (TSL)</option>
+            <option value="top_submerged_lance">
+              Top Submerged Lance (TSL)
+            </option>
             <option value="imperial_smelting">Imperial Smelting</option>
             <option value="direct_smelting">Direct Smelting</option>
           </select>
-          <span className="text-red-500 text-lg absolute -top-1 -right-2">*</span>
+          <span className="text-red-500 text-lg absolute -top-1 -right-2">
+            *
+          </span>
         </div>
 
         <div className="relative">
@@ -139,9 +168,11 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
             placeholder="Material Input (tons per batch)"
             value={materialInput_tons_perBatch}
             onChange={(e) => setMaterialInput_tons_perBatch(e.target.value)}
-            className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+            className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-          <span className="text-red-500 text-lg absolute -top-1 -right-2">*</span>
+          <span className="text-red-500 text-lg absolute -top-1 -right-2">
+            *
+          </span>
         </div>
 
         <div className="relative">
@@ -150,9 +181,11 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
             placeholder="Operating Temperature (°C)"
             value={operatingTemp_C}
             onChange={(e) => setOperatingTemp_C(e.target.value)}
-            className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+            className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-          <span className="text-red-500 text-lg absolute -top-1 -right-2">*</span>
+          <span className="text-red-500 text-lg absolute -top-1 -right-2">
+            *
+          </span>
         </div>
 
         <input
@@ -160,15 +193,17 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Energy Consumption (kWh per ton)"
           value={energyConsumption_kWh_perTon}
           onChange={(e) => setEnergyConsumption_kWh_perTon(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         <select
           value={energySource}
           onChange={(e) => setEnergySource(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
-          <option value="" disabled>Select Energy Source</option>
+          <option value="" disabled>
+            Select Energy Source
+          </option>
           <option value="electricity">Electricity</option>
           <option value="coal">Coal</option>
           <option value="coke">Coke</option>
@@ -183,7 +218,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Flux Materials (kg per ton)"
           value={fluxMaterials_kg_perTon}
           onChange={(e) => setFluxMaterials_kg_perTon(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         <input
@@ -191,7 +226,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Slag Generated (kg per ton)"
           value={slagGenerated_kg_perTon}
           onChange={(e) => setSlagGenerated_kg_perTon(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         <input
@@ -199,7 +234,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Output Efficiency (percent)"
           value={outputEfficiency_percent}
           onChange={(e) => setOutputEfficiency_percent(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         <input
@@ -207,15 +242,17 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Recycled Scrap Input (tons per ton)"
           value={recycledScrapInput_tons_perTon}
           onChange={(e) => setRecycledScrapInput_tons_perTon(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         <select
           value={recyclingQuality}
           onChange={(e) => setRecyclingQuality(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         >
-          <option value="" disabled>Select Recycling Quality</option>
+          <option value="" disabled>
+            Select Recycling Quality
+          </option>
           <option value="high">High Quality</option>
           <option value="medium">Medium Quality</option>
           <option value="low">Low Quality</option>
@@ -228,7 +265,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Water Consumption (litre per ton)"
           value={waterConsumption_L_perTon}
           onChange={(e) => setWaterConsumption_L_perTon(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         <input
@@ -236,7 +273,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           placeholder="Operating Cost (USD per ton)"
           value={operatingCost_USD_perTon}
           onChange={(e) => setOperatingCost_USD_perTon(e.target.value)}
-          className="border border-gray-400 rounded-md px-4 py-2 w-[400px] focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white"
+          className="text-white w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         {/* Submit Smelting Data Button */}
@@ -247,7 +284,7 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
         >
           {isLoading ? "Submitting..." : "Submit Smelting Data"}
         </button>
-        
+
         <div className="text-xs text-gray-500 mt-2">
           <span className="text-red-500">*</span> Required fields
         </div>
@@ -259,43 +296,75 @@ export default function Smelting({ projectId, onSuccess, onError }: SmeltingProp
           <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
             <div className="text-center mb-4">
               <div className="text-green-500 text-6xl mb-2">✅</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Smelting Data Submitted Successfully!</h2>
-              <p className="text-gray-600">Your smelting process data has been recorded.</p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                Smelting Data Submitted Successfully!
+              </h2>
+              <p className="text-gray-600">
+                Your smelting process data has been recorded.
+              </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-4 mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Smelting Details</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Smelting Details
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
                   <span className="font-medium text-gray-700">Process ID:</span>
-                  <p className="text-gray-900 font-mono">{smeltingResponse.smeltingData?._id || 'N/A'}</p>
+                  <p className="text-gray-900 font-mono">
+                    {smeltingResponse.smeltingData?._id || "N/A"}
+                  </p>
                 </div>
                 <div>
-                  <span className="font-medium text-gray-700">Smelting Technology:</span>
-                  <p className="text-gray-900">{smeltingResponse.smeltingData?.smeltingTech || 'N/A'}</p>
+                  <span className="font-medium text-gray-700">
+                    Smelting Technology:
+                  </span>
+                  <p className="text-gray-900">
+                    {smeltingResponse.smeltingData?.smeltingTech || "N/A"}
+                  </p>
                 </div>
                 <div>
-                  <span className="font-medium text-gray-700">Material Input:</span>
-                  <p className="text-gray-900">{smeltingResponse.smeltingData?.materialInput_tons_perBatch || 'N/A'} tons/batch</p>
+                  <span className="font-medium text-gray-700">
+                    Material Input:
+                  </span>
+                  <p className="text-gray-900">
+                    {smeltingResponse.smeltingData
+                      ?.materialInput_tons_perBatch || "N/A"}{" "}
+                    tons/batch
+                  </p>
                 </div>
                 <div>
-                  <span className="font-medium text-gray-700">Operating Temperature:</span>
-                  <p className="text-gray-900">{smeltingResponse.smeltingData?.operatingTemp_C || 'N/A'}°C</p>
+                  <span className="font-medium text-gray-700">
+                    Operating Temperature:
+                  </span>
+                  <p className="text-gray-900">
+                    {smeltingResponse.smeltingData?.operatingTemp_C || "N/A"}°C
+                  </p>
                 </div>
                 <div>
-                  <span className="font-medium text-gray-700">Energy Source:</span>
+                  <span className="font-medium text-gray-700">
+                    Energy Source:
+                  </span>
                   <div className="text-gray-900">
-                    {smeltingResponse.smeltingData?.energySource && Array.isArray(smeltingResponse.smeltingData.energySource) 
-                      ? smeltingResponse.smeltingData.energySource.map((energy: any, index: number) => (
-                          <p key={index}>{energy.type}: {energy.percent}%</p>
-                        ))
-                      : 'N/A'
-                    }
+                    {smeltingResponse.smeltingData?.energySource &&
+                    Array.isArray(smeltingResponse.smeltingData.energySource)
+                      ? smeltingResponse.smeltingData.energySource.map(
+                          (energy: any, index: number) => (
+                            <p key={index}>
+                              {energy.type}: {energy.percent}%
+                            </p>
+                          )
+                        )
+                      : "N/A"}
                   </div>
                 </div>
                 <div>
-                  <span className="font-medium text-gray-700">Recycling Quality:</span>
-                  <p className="text-gray-900">{smeltingResponse.smeltingData?.recyclingQuality || 'N/A'}</p>
+                  <span className="font-medium text-gray-700">
+                    Recycling Quality:
+                  </span>
+                  <p className="text-gray-900">
+                    {smeltingResponse.smeltingData?.recyclingQuality || "N/A"}
+                  </p>
                 </div>
               </div>
             </div>

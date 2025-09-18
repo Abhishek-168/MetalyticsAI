@@ -62,8 +62,8 @@ export default function Pinit() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full space-y-6">
+      <div className="bg-gray-50 flex items-center justify-center mt-5">
+        <div className="bg-white p-4 rounded-lg shadow-md max-w-[50vw] w-full space-y-6">
           {stageCounter === 0 && (
             <>
               <span className="text-2xl font-semibold text-center block">

@@ -8,6 +8,7 @@ import EnvImpact from './pages/EnvImpact'
 import Circularity from './pages/Circularity'
 import Results from './pages/Results'
 import Chatbot from './Components/chatbot'
+import Strategies from './Components/stratigies'
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
           <Route path = "/results/:id" element={<Results />} />
           <Route path ="/project/results/envimpact/:id" element={<EnvImpact />} />
           <Route path = "/project/results/circularity/:id" element={<Circularity />} />
+          <Route path = "/project/results/strategies/:id" element={<Strategies />} />
          {/* <Route path ="/register" element={<>register</>} />          
           <Route path = "/project/impact/:id" element={<>project analytics</>} />
           <Route path = "/project/circularity/:id" element={<>project settings</>} />

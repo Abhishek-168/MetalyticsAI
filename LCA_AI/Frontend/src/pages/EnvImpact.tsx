@@ -41,7 +41,9 @@ export default function EnvImpact() {
   return (
 
     <div>
-      <h1>Project Results</h1>
+      <div className= "text-center">
+        <h1 className="text-2xl font-bold"> Project Results </h1>
+      </div>
       <Core data={core} />
       <StageWise data={stagewise} />
       <Polution data={TotalPollution} />
