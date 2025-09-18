@@ -22,7 +22,7 @@ router.get('/envimpact/:projectId', async (req, res) => {
   //   if (!project.results || !project.results.resultId) {
   //     return res.status(404).json({ error: "Results not found for this project" });
   //   }
-    const resultId = "68cb083d7ad4c74eef07bf16";
+    const resultId = "68cafd4d7ad4c74eef07bf12";
 
     // Assuming Results is another model you have defined
     const results = await Results.findById(resultId);
@@ -52,7 +52,7 @@ router.get('/circularity/:projectId', async (req, res) => {
   //   if (!project.results || !project.results.resultId) {
   //     return res.status(404).json({ error: "Results not found for this project" });
   //   }
-    const resultId = "68cb083d7ad4c74eef07bf16";
+    const resultId = "68cafd4d7ad4c74eef07bf12";
 
     const results = await Results.findById(resultId);
     if (!results) {
