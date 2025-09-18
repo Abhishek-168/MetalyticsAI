@@ -16,7 +16,7 @@ const SidebarContent = () => {
     return (
       <nav className="bg-[#f8f0f0] text-black p-4 border-b border-red-700 w-full">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold">LCA AI - Project Error</h1>
+          <h1 className="text-xl font-bold">Metalytics AI - Project Error</h1>
           <button 
             onClick={() => navigate('/')}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
@@ -197,7 +197,7 @@ const SidebarContent = () => {
         <nav className="bg-[#f8f0f0] text-black p-5 border-b border-red-700 w-full fixed top-0 right-0 z-20" >
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              <h1 className="text-xl font-bold">LCA AI - {metadata.project_name}</h1>
+              <h1 className="text-xl font-bold">Metalytics AI - {metadata.project_name}</h1>
               <span className="text-sm text-gray-600">ID: {id}</span>
             </div>
             <div className="flex items-center space-x-4">
